@@ -3,6 +3,9 @@ const router = express.Router();
 const Post = require("../models/Post");
 const { remove } = require("../models/Post");
 
+
+// CRUD API
+
 // Get all the posts
 router.get("/", async (req, res) => {
   try {

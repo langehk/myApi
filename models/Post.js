@@ -23,3 +23,4 @@ Post.create({
 
 // Opretter en model, ved navn posts, og giver den et "schema" som den skal bruge.
 module.exports = mongoose.model("posts", PostSchema);
+
