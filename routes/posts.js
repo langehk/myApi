@@ -3,16 +3,9 @@ const router = express.Router();
 const Post = require('../models/Post');
 const { remove } = require('../models/Post');
 
-// Routes
-/**
- * @swagger
- * /posts:
- *  get:
- *    description: Use to request all customers
- *    responses:
- *      '200':
- *        description: A successful response
- */
+// CRUD API
+
+// Get all the posts
 router.get('/', async (req, res) => {
   try {
     const posts = await Post.find(); // Henter alle vores posts.

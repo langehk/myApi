@@ -16,8 +16,6 @@ Hver gang vi bruger en request, sørger vi for, at body-parser kører!
 app.use(bodyParser.json());
 // Man kan nu lave routes.
 
-const postsRoute = require('./routes/posts');
-
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 const swaggerJsDoc = require('swagger-jsdoc');
@@ -71,11 +69,12 @@ app.get('/posts', async (req, res) => {
  *        name: post
  *        description: create post
  *        schema:
- *          type: integer
- *          format: integer
+ *          type: object
  *        properties:
- *          id:
- *            type: integer
+ *          title:
+ *            type: string
+ *          description:
+ *            type: string
  *    responses:
  *      '201':
  *        description: Successfully created post
@@ -125,6 +124,7 @@ app.get('/post/:postId', async (req, res) => {
 
 //Middleware.
 //app.use('/posts', postsRoute);
+//app.use('/users', usersRoute);
 
 // Connect to DB.
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
